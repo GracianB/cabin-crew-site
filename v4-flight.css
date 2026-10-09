@@ -1,0 +1,59 @@
+/* Cabin Crew V4: editorial flight experience */
+.v4-flight-stage{isolation:isolate;background:radial-gradient(circle at 72% 23%,#f5e5bb 0 9%,#cfc6b5 24%,transparent 45%),linear-gradient(165deg,#e7e1d4 0%,#b9b1a9 39%,#596877 73%,#16283b 100%)}
+.v4-flight-orbit{position:absolute;width:580px;height:580px;top:5%;left:3%;border:1px solid #ffffff75;border-radius:50%;transform:rotate(-22deg);box-shadow:0 0 0 62px #fff5e914,0 0 0 122px #fff5e911;pointer-events:none}
+.v4-orbit-two{width:350px;height:350px;top:30%;left:42%;border-style:dashed;opacity:.45;box-shadow:none}
+.v4-stage-caption{position:absolute;top:34px;right:30px;z-index:2;font:700 9px Manrope;letter-spacing:.18em;color:#294054;text-align:right}
+.v4-stage-caption span{color:#8e4246;padding:0 7px}
+.v4-flight-stage .flight-line{z-index:2}
+.v4-flight-stage .plane{filter:drop-shadow(0 4px 8px #10283c66)}
+.v4-brief-button{color:#8b4144;background:none;border:1px solid #8b414480;font:700 12px 'DM Sans',sans-serif;cursor:pointer}
+.v4-brief-button:hover{background:#f0e6dc}
+.v4-path{background:#fffdf8}
+.v4-path-title{display:grid;grid-template-columns:1fr .7fr;gap:8vw;align-items:end}
+.v4-path-title>p{max-width:480px;font-size:16px;line-height:1.8;color:#61676d}
+.v4-overline{font:700 10px Manrope;letter-spacing:.2em;color:#a45250;margin-bottom:22px}
+.v4-path-layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:35px;margin-top:62px}
+.v4-route-controls{display:grid;gap:8px;align-content:start}
+.v4-stop{display:grid;grid-template-columns:35px 1fr;grid-template-rows:auto auto;gap:4px 12px;padding:19px 18px;text-align:left;background:#f4f0e9;border:1px solid #ded6cc;cursor:pointer;color:#172536;font-family:'DM Sans',sans-serif;transition:background .2s,border-color .2s,transform .2s}
+.v4-stop>span{grid-row:1/3;font:700 11px Manrope;color:#a45f5b;padding-top:5px}
+.v4-stop strong{font:400 23px 'Playfair Display',serif}
+.v4-stop small{font-size:11px;color:#677078}
+.v4-stop.is-active{background:#222e3a;color:white;border-color:#222e3a;transform:translateX(4px)}
+.v4-stop.is-active small{color:#d5c6b8}
+.v4-stop:focus-visible,.v4-panel-controls button:focus-visible,.v4-dialog-shell button:focus-visible{outline:3px solid #b05e5e;outline-offset:3px}
+.v4-route-panel{min-height:625px;padding:clamp(30px,5vw,70px);background:linear-gradient(155deg,#24384b,#151f2d);color:#fff;position:relative;display:flex;flex-direction:column;overflow:hidden}
+.v4-route-panel:before{content:"";width:500px;height:500px;position:absolute;right:-25%;top:10%;border:1px solid #e0c19529;border-radius:50%;box-shadow:0 0 0 75px #ffffff08,0 0 0 150px #ffffff05}
+.v4-panel-top{display:flex;justify-content:space-between;gap:10px;color:#e5bf95;font:700 9px Manrope;letter-spacing:.16em;position:relative}
+.v4-symbol{font:400 110px 'Playfair Display',serif;color:#e1be8d90;margin:35px 0 3px;line-height:1}
+.v4-route-panel h3{font:400 clamp(44px,5vw,80px)/1.1 'Playfair Display',serif;margin-bottom:10px;position:relative}
+.v4-panel-role{font:700 10px Manrope;letter-spacing:.18em;color:#d9ae7a}
+.v4-route-panel #v4-panel-copy{font-size:18px;line-height:1.8;max-width:600px;color:#e0e4e8;position:relative}
+.v4-lesson{font-size:14px;line-height:1.7;color:#d5d9dc;margin-top:auto;position:relative}
+.v4-lesson strong{color:#eed2ab}
+.v4-panel-controls{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #ffffff3b;padding-top:22px;position:relative}
+.v4-panel-controls button{border:0;background:none;color:#fff;font:700 12px Manrope;padding:12px 4px;cursor:pointer}
+.v4-panel-controls button:disabled{opacity:.33;cursor:not-allowed}
+.v4-brief-dialog{border:0;padding:0;width:min(790px,calc(100vw - 30px));max-height:calc(100vh - 30px);color:#192838;background:#fffaf3;box-shadow:0 25px 100px #0008}
+.v4-brief-dialog::backdrop{background:#06101dcc;backdrop-filter:blur(5px)}
+.v4-dialog-shell{padding:clamp(25px,4vw,55px);overflow:auto;max-height:calc(100vh - 30px)}
+.v4-dialog-top{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #d6c6b4;padding-bottom:20px;margin-bottom:25px;font:700 10px Manrope;letter-spacing:.15em;color:#8d4a4b}
+.v4-dialog-top button{background:none;border:0;cursor:pointer;font-size:20px;color:#27364a}
+.v4-dialog-shell h2{font:400 clamp(38px,5vw,60px)/1.1 'Playfair Display',serif;max-width:680px;margin-bottom:35px}
+.v4-dialog-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.v4-dialog-grid>div{border-top:1px solid #d8cbbd;padding-top:17px}
+.v4-dialog-grid span{font:700 10px Manrope;letter-spacing:.12em;color:#a35250}
+.v4-dialog-grid p{font-size:13px;color:#565e64;line-height:1.75;margin:12px 0}
+.v4-dialog-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:38px}
+.v4-dialog-bottom a{color:#8e484a;font-size:12px;font-weight:700}
+.v4-dialog-bottom button{background:#1a2a39;color:white;border:0;padding:15px 20px;font:700 12px Manrope;cursor:pointer}
+@media(max-width:1000px){.v4-path-layout{grid-template-columns:1fr}.v4-route-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.v4-stop{padding:15px}.v4-stop strong{font-size:19px}.v4-route-panel{min-height:450px}.v4-path-title{grid-template-columns:1fr}}
+@media(max-width:650px){.v4-route-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.v4-stop{grid-template-columns:1fr}.v4-stop span{grid-row:auto}.v4-route-panel{padding:28px;min-height:490px}.v4-panel-top{font-size:8px}.v4-symbol{font-size:70px}.v4-route-panel #v4-panel-copy{font-size:16px}.v4-dialog-grid{grid-template-columns:1fr}.v4-dialog-bottom{align-items:stretch;flex-direction:column}.v4-brief-button{width:100%}.v4-stage-caption{right:12px;font-size:7px}}
+@media(prefers-reduced-motion:reduce){.v4-stop{transition:none}.v4-stop.is-active{transform:none}}
+@media print{.v4-path-layout{grid-template-columns:1fr}.v4-route-controls,.v4-panel-controls,.v4-brief-dialog{display:none}.v4-route-panel{min-height:auto}.v4-flight-orbit{display:none}}
+
+/* V5 touch ergonomics and typography */
+.v4-stop{min-height:75px}
+.v4-panel-controls button{min-height:44px}
+.v4-dialog-top button{min-width:44px;min-height:44px}
+.v4-dialog-bottom button{min-height:44px}
+@media(max-width:650px){.v4-stop{min-height:94px}.v4-path-layout{gap:22px}.v4-route-panel h3{overflow-wrap:anywhere}}
