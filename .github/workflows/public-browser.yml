@@ -1,0 +1,35 @@
+name: Cabin Crew Public E2E
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    name: Public site quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Static source and syntax contracts
+        run: |
+          node --check script.js
+          node --check v4-flight.js
+          node --check v6.js
+          node --check v7.js
+          node --check scripts/browser-smoke.mjs
+      - name: Install pinned Playwright test runtime
+        run: |
+          npm install --no-save --no-package-lock playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Real browser verification
+        run: node scripts/browser-smoke.mjs
