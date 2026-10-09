@@ -42,6 +42,17 @@ async function checkPage(browser, width, reducedMotion = false) {
   const response = await page.goto(address, { waitUntil: "domcontentloaded" });
   assert.equal(response.status(), 200, `HTTP 200 at ${width}px`);
   assert.match(await page.title(), /Cabin Crew/);
+  assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"),
+    "https://gracianb.github.io/cabin-crew-site/");
+  assert.equal(await page.locator('meta[property="og:image"]').getAttribute("content"),
+    "https://gracianb.github.io/cabin-crew-site/og-cover.png?v=1");
+  assert.equal(await page.locator('meta[name="twitter:card"]').getAttribute("content"),"summary_large_image");
+  const social=await fetch(new URL("og-cover.png",address));
+  assert.equal(social.status,200,"Social card must be published");
+  const png=Buffer.from(await social.arrayBuffer());
+  assert.equal(png.subarray(0,8).toString("hex"),"89504e470d0a1a0a");
+  assert.equal(png.readUInt32BE(16),1200);
+  assert.equal(png.readUInt32BE(20),630);
   assert.match(await page.locator("h1").innerText(), /journeys[\s\S]*returning/i);
   assert.equal(await page.locator("[data-stop]").count(), 6, "Six actual career chapters");
   const overflows = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
