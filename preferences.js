@@ -7,7 +7,7 @@
     document.documentElement.dataset.theme = theme;
     const dark = theme === 'dark';
     button.setAttribute('aria-pressed', String(dark));
-    button.setAttribute('aria-label', dark ? 'Use light theme' : 'Use dark theme');
+    button.setAttribute('aria-label', (window.cabinText || (text => text))(dark ? 'Use light theme' : 'Use dark theme'));
     button.textContent = dark ? '☀' : '☾';
     document.querySelector('meta[name="color-scheme"]').content = theme;
   }

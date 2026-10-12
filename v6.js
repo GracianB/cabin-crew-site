@@ -16,7 +16,7 @@ if(nav&&'IntersectionObserver'in window){
  sections.forEach(s=>io.observe(s));
 }
 const status=document.getElementById('v6-status');
-function notify(message){if(status)status.textContent=message}
+function notify(message){if(status)status.textContent=(window.cabinText||((t)=>t))(message)}
 document.getElementById('v6-copy')?.addEventListener('click',async()=>{
  try{await navigator.clipboard.writeText(location.href.split('#')[0]);notify('Portfolio link copied.')}
  catch{notify('Clipboard unavailable. Copy the address from the browser address bar.')}

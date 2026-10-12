@@ -8,3 +8,10 @@ html[data-theme="dark"] .btn.secondary,html[data-theme="dark"] .mobile-menu-butt
 @media print{.theme-switch,.universe-links{display:none}html[data-theme] body,html[data-theme] .chapter{background:white!important;color:#202c36!important}html[data-theme] .chapter p{color:#202c36!important}}
 
 html[data-theme="dark"] .nav nav a{color:#d5dce1}html[data-theme="dark"] h1 em,html[data-theme="dark"] h2 em,html[data-theme="dark"] .eyebrow{color:#e0a99b}html[data-theme="dark"] .nav-contact{color:#e8e1d7}
+
+.language-switch{display:flex;gap:2px;flex-shrink:0}.language-switch button{min-height:44px;min-width:36px;background:transparent;color:inherit;border:1px solid currentColor;border-radius:5px;cursor:pointer}.language-switch button[aria-pressed="true"]{background:#e6b9a4;color:#18222d}.language-switch button:focus-visible{outline:3px solid #bf795d;outline-offset:3px}@media(max-width:600px){.nav{flex-wrap:wrap;gap:10px}.nav-contact{margin-left:auto}.language-switch button{min-width:32px}}@media print{.language-switch{display:none}}
+
+html[data-theme="dark"] .btn.primary{background:#e6b9a4;color:#18222d}html[data-theme="dark"] .v4-brief-button{color:#e0a99b;border-color:#bd8b7f}html[data-theme="dark"] .v4-stop small{color:#ccd3d8}
+@media(max-width:600px){.nav .brand{order:0;flex:1 1 calc(100% - 70px)}.nav .theme-switch{order:1}.nav .mobile-menu-button{order:2}.nav .language-switch{order:3}.nav .nav-contact{order:4}}
+
+html[data-theme="dark"] .v4-brief-dialog p{color:#ccd3d8}html[data-theme="dark"] .v4-dialog-top,html[data-theme="dark"] .v4-dialog-grid span,html[data-theme="dark"] .v4-overline,html[data-theme="dark"] .v4-brief-dialog button,html[data-theme="dark"] .v4-dialog-bottom a{color:#e0a99b}html[data-theme="dark"] .v4-brief-dialog em{color:#e0a99b}
