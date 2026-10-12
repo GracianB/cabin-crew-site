@@ -7,7 +7,7 @@
  const close=()=>{
    nav.classList.remove('is-open');
    button.setAttribute('aria-expanded','false');
-   button.setAttribute('aria-label','Open navigation');
+   button.setAttribute('aria-label',(window.cabinText||((t)=>t))('Open navigation'));
  };
  document.addEventListener('pointerdown',event=>{
    if(nav.classList.contains('is-open')&&!nav.contains(event.target)&&!button.contains(event.target))close();

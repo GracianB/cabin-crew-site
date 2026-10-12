@@ -10,19 +10,19 @@ if(menuButton&&navigation){
     const open=menuButton.getAttribute('aria-expanded')!=='true';
     menuButton.setAttribute('aria-expanded',String(open));
     if(open) navigation.querySelector('a')?.focus();
-    menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+    menuButton.setAttribute('aria-label',(window.cabinText||((t)=>t))(open?'Close navigation':'Open navigation'));
     navigation.classList.toggle('is-open',open);
   });
   navigation.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
     menuButton.setAttribute('aria-expanded','false');
-    menuButton.setAttribute('aria-label','Open navigation');
+    menuButton.setAttribute('aria-label',(window.cabinText||((t)=>t))('Open navigation'));
     navigation.classList.remove('is-open');
   }));
   document.addEventListener('keydown',e=>{
     if(e.key==='Escape' && navigation.classList.contains('is-open')){
       navigation.classList.remove('is-open');
       menuButton.setAttribute('aria-expanded','false');
-      menuButton.setAttribute('aria-label','Open navigation');
+      menuButton.setAttribute('aria-label',(window.cabinText||((t)=>t))('Open navigation'));
       menuButton.focus();
     }
   });

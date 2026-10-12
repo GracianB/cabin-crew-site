@@ -26,3 +26,9 @@ npm install --no-save --no-package-lock playwright@1.58.2
 npx playwright install chromium
 node scripts/browser-smoke.mjs
 ```
+
+## Appearance and portfolio navigation
+
+The header theme button switches between light and dark and remembers the choice locally when storage is available. The footer links to the main portfolio, professional deck, Systems Lab / Aigoritmo and Yoga. The aviation profile supports English and Spanish, including the six interactive career chapters, introduction dialog and accessibility labels. The language preference is stored locally and can be overridden with `?lang=es` or `?lang=en`.
+
+Translations are maintained in `translations.json` and embedded into `language.js` to keep the language switch available without an additional fetch. Keep both dictionaries in sync when editing copy.
