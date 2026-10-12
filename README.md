@@ -26,3 +26,7 @@ npm install --no-save --no-package-lock playwright@1.58.2
 npx playwright install chromium
 node scripts/browser-smoke.mjs
 ```
+
+## Appearance and portfolio navigation
+
+The header theme button switches between light and dark and remembers the choice locally when storage is available. The footer links to the main portfolio, professional deck, Systems Lab / Aigoritmo and Yoga. The aviation profile remains in English.
